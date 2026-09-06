@@ -1,127 +1,818 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alanna Rudolph | Mechatronics Engineering</title>
-  <meta name="description" content="Engineering portfolio of Alanna Rudolph, featuring robotics, PCB design, mechanical design, automation, and manufacturing projects.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alanna Rudolph | Mechatronics Engineering</title>
+    <meta
+        name="description"
+        content="Engineering portfolio of Alanna Rudolph, a Mechatronics Engineering student specializing in mechanical design, electronics, robotics, and automation."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Matches the portfolio's visual style -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <nav class="nav container">
-    <a class="logo" href="#top">AR<span>.</span></a>
-    <div class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="#top" class="logo">
+            AR
+        </a>
+
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
     </div>
-  </nav>
 </header>
 
+
 <main id="top">
-  <section class="hero container">
-    <div class="hero-copy">
-      <p class="eyebrow">MECHATRONICS ENGINEERING</p>
-      <h1>Designing things that<br><span>move, sense &amp; work.</span></h1>
-      <p class="hero-text">
-        Engineering portfolio featuring robotics, PCB design, mechanical systems,
-        automation, prototyping, and manufacturing.
-      </p>
-      <a class="button" href="#projects">View my projects <span>↓</span></a>
-    </div>
-  </section>
 
-  <section class="stats">
-    <div class="container stats-grid">
-      <div><strong>9</strong><span>Engineering Projects</span></div>
-      <div><strong>5DOF</strong><span>Robotic Arm</span></div>
-      <div><strong>15</strong><span>Cable Types Tested</span></div>
-      <div><strong>2nd</strong><span>Worldwide — IEEE EMC-SPI</span></div>
-    </div>
-  </section>
+<!-- =========================
+     HERO
+========================= -->
 
-  <section id="projects" class="section container">
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">MECHATRONICS ENGINEERING</p>
+
+        <h1>
+            Alanna<br>
+            <span>Rudolph</span>
+        </h1>
+
+        <p class="hero-description">
+            Engineering student building at the intersection of
+            mechanical design, electronics, robotics, and automation.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="button button-primary">
+                View my projects
+                <span>↓</span>
+            </a>
+
+            <a href="#contact" class="button button-secondary">
+                Get in touch
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-graphic">
+
+        <div class="technical-grid"></div>
+
+        <div class="hero-card">
+            <div class="hero-card-label">CURRENT BUILD</div>
+            <div class="hero-card-title">5DOF Robotic Arm</div>
+
+            <div class="hero-line"></div>
+
+            <div class="hero-card-details">
+                <span>SolidWorks</span>
+                <span>Arduino</span>
+                <span>MATLAB</span>
+            </div>
+        </div>
+
+        <div class="crosshair crosshair-1">+</div>
+        <div class="crosshair crosshair-2">+</div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUICK STATS
+========================= -->
+
+<section class="stats">
+
+    <div class="stat">
+        <strong>9</strong>
+        <span>Engineering projects</span>
+    </div>
+
+    <div class="stat">
+        <strong>5DOF</strong>
+        <span>Robotic arm platform</span>
+    </div>
+
+    <div class="stat">
+        <strong>15</strong>
+        <span>Cable types tested</span>
+    </div>
+
+    <div class="stat">
+        <strong>2nd</strong>
+        <span>World — IEEE EMC-SPI</span>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects" class="section projects-section">
+
     <div class="section-heading">
-      <p class="eyebrow">SELECTED WORK</p>
-      <h2>Projects</h2>
-      <p>Click a project to explore the engineering work behind it.</p>
+
+        <div>
+            <p class="eyebrow">SELECTED WORK</p>
+            <h2>Projects</h2>
+        </div>
+
+        <p class="section-intro">
+            A selection of mechanical, electrical, robotics,
+            and manufacturing projects from university and industry.
+        </p>
+
     </div>
+
+
+    <!-- FILTER BUTTONS -->
 
     <div class="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="robotics">Robotics</button>
-      <button class="filter" data-filter="electrical">Electrical</button>
-      <button class="filter" data-filter="mechanical">Mechanical</button>
-      <button class="filter" data-filter="manufacturing">Manufacturing</button>
+
+        <button class="filter active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter" data-filter="robotics">
+            Robotics
+        </button>
+
+        <button class="filter" data-filter="electrical">
+            Electrical
+        </button>
+
+        <button class="filter" data-filter="mechanical">
+            Mechanical
+        </button>
+
+        <button class="filter" data-filter="manufacturing">
+            Manufacturing
+        </button>
+
     </div>
 
-    <div id="project-grid" class="project-grid"></div>
-  </section>
 
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">TOOLKIT</p>
-        <h2>Engineering Skills</h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Mechanical</h3>
-          <p>SolidWorks · AutoCAD · GD&amp;T · 3D Printing · Manual Machining</p>
+    <!-- PROJECT GRID -->
+
+    <div class="project-grid">
+
+
+        <!-- ROBOTIC ARM -->
+
+        <article class="project-card featured"
+                 data-category="robotics mechanical">
+
+            <div class="project-image">
+                <img src="images/robotic-arm.jpg"
+                     alt="5DOF robotic arm">
+
+                <span class="project-number">01</span>
+
+                <span class="project-status">
+                    Ongoing
+                </span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    PERSONAL PROJECT
+                </p>
+
+                <h3>Robotic Arm</h3>
+
+                <p>
+                    Developing a custom 5DOF hardware platform
+                    for exploratory learning in robotic manipulation.
+                </p>
+
+                <div class="tags">
+                    <span>SolidWorks</span>
+                    <span>Arduino</span>
+                    <span>MATLAB</span>
+                    <span>3D Printing</span>
+                </div>
+
+                <button
+                    class="project-link"
+                    onclick="openProject('robotic-arm')"
+                >
+                    View project →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- CABLE PCB -->
+
+        <article class="project-card"
+                 data-category="electrical">
+
+            <div class="project-image">
+                <img src="images/cable-pcb.jpg"
+                     alt="Automated cable verification PCB">
+
+                <span class="project-number">02</span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    QIDNI LABS · HARDWARE ENGINEERING
+                </p>
+
+                <h3>Automated Cable Verification PCB</h3>
+
+                <p>
+                    Designed and implemented the first stage of
+                    an electrical and firmware testing platform.
+                </p>
+
+                <div class="tags">
+                    <span>Altium</span>
+                    <span>PCB Design</span>
+                    <span>MCU</span>
+                    <span>Testing</span>
+                </div>
+
+                <button
+                    class="project-link"
+                    onclick="openProject('cable-pcb')"
+                >
+                    View project →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- EMC -->
+
+        <article class="project-card"
+                 data-category="robotics electrical mechanical">
+
+            <div class="project-image">
+                <img src="images/emc-car.jpg"
+                     alt="IEEE EMC-SPI competition car">
+
+                <span class="project-number">03</span>
+
+                <span class="award">
+                    2ND WORLDWIDE
+                </span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    IEEE EMC-SPI · STUDENT COMPETITION
+                </p>
+
+                <h3>Student Hardware Competition</h3>
+
+                <p>
+                    Designed a lightweight instrumented car and
+                    gripper system for robotic EMC measurements.
+                </p>
+
+                <div class="tags">
+                    <span>KiCad</span>
+                    <span>Arduino</span>
+                    <span>CAD</span>
+                    <span>Sensors</span>
+                </div>
+
+                <button
+                    class="project-link"
+                    onclick="openProject('emc')"
+                >
+                    View project →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- AGITATION JIG -->
+
+        <article class="project-card"
+                 data-category="mechanical manufacturing">
+
+            <div class="project-image">
+                <img src="images/agitation-jig.jpg"
+                     alt="Automated agitation jig">
+
+                <span class="project-number">04</span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    KARDIUM · MECHANICAL ENGINEERING
+                </p>
+
+                <h3>Automated Agitation Jig</h3>
+
+                <p>
+                    Designed a fully pneumatic system to replace
+                    a manual agitation cleaning process.
+                </p>
+
+                <div class="tags">
+                    <span>Pneumatics</span>
+                    <span>CAD</span>
+                    <span>Mechanisms</span>
+                    <span>Prototyping</span>
+                </div>
+
+                <button
+                    class="project-link"
+                    onclick="openProject('agitation')"
+                >
+                    View project →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- VACUUM JIG -->
+
+        <article class="project-card"
+                 data-category="mechanical">
+
+            <div class="project-image">
+                <img src="images/vacuum-jig.jpg"
+                     alt="Catheter vacuum verification jig">
+
+                <span class="project-number">05</span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    KARDIUM · MECHANICAL ENGINEERING
+                </p>
+
+                <h3>Catheter Vacuum Verification Jig</h3>
+
+                <p>
+                    Redesigned and validated a test jig capable of
+                    accurately applying controlled vacuum pressure.
+                </p>
+
+                <div class="tags">
+                    <span>Pneumatics</span>
+                    <span>Testing</span>
+                    <span>Validation</span>
+                    <span>CAD</span>
+                </div>
+
+                <button
+                    class="project-link"
+                    onclick="openProject('vacuum')"
+                >
+                    View project →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- LIQUID MANAGEMENT -->
+
+        <article class="project-card"
+                 data-category="mechanical">
+
+            <div class="project-image">
+                <img src="images/liquid-jig.jpg"
+                     alt="Liquid management jig">
+
+                <span class="project-number">06</span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    KARDIUM · MECHANICAL ENGINEERING
+                </p>
+
+                <h3>Liquid Management Jig</h3>
+
+                <p>
+                    Designed a mobile pneumatic pumping system
+                    for filling and emptying up to 20L of liquid.
+                </p>
+
+                <div class="tags">
+                    <span>Pneumatics</span>
+                    <span>Manufacturing</span>
+                    <span>Design</span>
+                    <span>Safety</span>
+                </div>
+
+                <button
+                    class="project-link"
+                    onclick="openProject('liquid')"
+                >
+                    View project →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ELECTRICAL CATHETER -->
+
+        <article class="project-card"
+                 data-category="electrical mechanical">
+
+            <div class="project-image">
+                <img src="images/catheter-jig.jpg"
+                     alt="Electrical catheter test jig">
+
+                <span class="project-number">07</span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    KARDIUM · MECHANICAL ENGINEERING
+                </p>
+
+                <h3>Electrical Catheter Test Jig</h3>
+
+                <p>
+                    Designed three variations of a test fixture
+                    for connecting to individual catheter electrodes.
+                </p>
+
+                <div class="tags">
+                    <span>3D Printing</span>
+                    <span>Soldering</span>
+                    <span>Fixtures</span>
+                    <span>CAD</span>
+                </div>
+
+                <button
+                    class="project-link"
+                    onclick="openProject('catheter')"
+                >
+                    View project →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- LOOM -->
+
+        <article class="project-card"
+                 data-category="robotics mechanical">
+
+            <div class="project-image">
+                <img src="images/automated-loom.jpg"
+                     alt="Automated loom project">
+
+                <span class="project-number">08</span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    MTE100 · MECHATRONICS PROJECT
+                </p>
+
+                <h3>Automated Loom</h3>
+
+                <p>
+                    Built a robotic weaving system integrating
+                    three distinct motion mechanisms.
+                </p>
+
+                <div class="tags">
+                    <span>Arduino</span>
+                    <span>3D Printing</span>
+                    <span>Mechanisms</span>
+                    <span>Programming</span>
+                </div>
+
+                <a
+                    href="https://youtu.be/RN2TIEhCwVE"
+                    target="_blank"
+                    class="project-link"
+                >
+                    Watch video →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- MACHINING -->
+
+        <article class="project-card"
+                 data-category="manufacturing mechanical">
+
+            <div class="project-image">
+                <img src="images/machining.jpg"
+                     alt="Machined engineering components">
+
+                <span class="project-number">09</span>
+            </div>
+
+            <div class="project-content">
+
+                <p class="project-type">
+                    KARDIUM · MANUFACTURING
+                </p>
+
+                <h3>Machining</h3>
+
+                <p>
+                    Manufactured aluminum and Delrin components
+                    using a manual mill and workshop equipment.
+                </p>
+
+                <div class="tags">
+                    <span>Manual Milling</span>
+                    <span>Aluminum</span>
+                    <span>Delrin</span>
+                    <span>Manufacturing</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills" class="section skills-section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">TECHNICAL TOOLKIT</p>
+            <h2>Skills</h2>
         </div>
-        <div class="skill-group">
-          <h3>Electrical</h3>
-          <p>Altium · KiCad · PCB Layout · Circuit Design · Arduino · STM32</p>
-        </div>
-        <div class="skill-group">
-          <h3>Software &amp; Controls</h3>
-          <p>C++ · Python · MATLAB · Robotics Toolbox · Git · Simulink</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="about" class="section container about">
-    <div>
-      <p class="eyebrow">ABOUT</p>
-      <h2>Mechatronics engineer<br>who likes building things.</h2>
     </div>
-    <p>
-      I enjoy working across mechanical, electrical, and software systems —
-      from designing and machining physical hardware to writing the code that
-      makes it move. My projects span robotics, medical-device test equipment,
-      PCB design, automation, and rapid prototyping.
-    </p>
-  </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <p class="eyebrow">GET IN TOUCH</p>
-      <h2>Let's build something.</h2>
-      <p>Open to engineering opportunities, robotics projects, and interesting technical problems.</p>
-      <a class="button button-light" href="mailto:your.email@example.com">Email me</a>
+    <div class="skills-grid">
+
+        <div class="skill-group">
+            <div class="skill-icon">01</div>
+            <h3>Mechanical Design</h3>
+            <p>
+                CAD, mechanisms, fixtures, prototyping,
+                3D printing, and design for manufacturing.
+            </p>
+
+            <div class="skill-list">
+                <span>SolidWorks</span>
+                <span>AutoCAD</span>
+                <span>GD&T</span>
+                <span>3D Printing</span>
+            </div>
+        </div>
+
+
+        <div class="skill-group">
+            <div class="skill-icon">02</div>
+            <h3>Electronics</h3>
+            <p>
+                PCB design, embedded hardware,
+                sensors, motor control, and prototyping.
+            </p>
+
+            <div class="skill-list">
+                <span>Altium</span>
+                <span>KiCad</span>
+                <span>Arduino</span>
+                <span>STM32</span>
+            </div>
+        </div>
+
+
+        <div class="skill-group">
+            <div class="skill-icon">03</div>
+            <h3>Programming & Controls</h3>
+            <p>
+                Software and controls development for
+                embedded and robotic systems.
+            </p>
+
+            <div class="skill-list">
+                <span>C++</span>
+                <span>Python</span>
+                <span>MATLAB</span>
+                <span>Git</span>
+            </div>
+        </div>
+
+
+        <div class="skill-group">
+            <div class="skill-icon">04</div>
+            <h3>Manufacturing</h3>
+            <p>
+                Hands-on manufacturing experience spanning
+                machining, fabrication, and prototyping.
+            </p>
+
+            <div class="skill-list">
+                <span>Manual Milling</span>
+                <span>Laser Cutting</span>
+                <span>Soldering</span>
+                <span>Prototyping</span>
+            </div>
+        </div>
+
     </div>
-  </section>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="about-section">
+
+    <div class="about-inner">
+
+        <div class="about-label">
+            <p class="eyebrow">ABOUT</p>
+            <span class="big-number">04</span>
+        </div>
+
+        <div class="about-content">
+
+            <h2>
+                Building things<br>
+                that <em>work.</em>
+            </h2>
+
+            <p>
+                I'm a Mechatronics Engineering student interested in
+                problems that sit between mechanical, electrical,
+                and software engineering.
+            </p>
+
+            <p>
+                My projects span robotics, PCB design, pneumatic
+                systems, test fixtures, manufacturing, and
+                mechatronic systems.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="contact-inner">
+
+        <p class="eyebrow">GET IN TOUCH</p>
+
+        <h2>
+            Let's build<br>
+            something.
+        </h2>
+
+        <p>
+            Interested in my work or want to discuss an
+            engineering opportunity?
+        </p>
+
+        <div class="contact-links">
+
+            <!-- Replace these with your actual links -->
+
+            <a href="mailto:YOUR_EMAIL@example.com">
+                Email
+                <span>↗</span>
+            </a>
+
+            <a href="https://www.linkedin.com/"
+               target="_blank">
+                LinkedIn
+                <span>↗</span>
+            </a>
+
+            <a href="https://github.com/"
+               target="_blank">
+                GitHub
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
 </main>
 
-<footer class="footer">
-  <div class="container">© 2026 Alanna Rudolph · Mechatronics Engineering</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <span>
+        © 2026 Alanna Rudolph
+    </span>
+
+    <span>
+        Mechatronics Engineering
+    </span>
+
 </footer>
 
-<div id="modal" class="modal" aria-hidden="true">
-  <div class="modal-backdrop" data-close-modal></div>
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" data-close-modal aria-label="Close">×</button>
-    <div id="modal-content"></div>
-  </div>
+
+<!-- =========================
+     PROJECT MODAL
+========================= -->
+
+<div id="project-modal" class="modal">
+
+    <div class="modal-overlay" onclick="closeProject()"></div>
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            onclick="closeProject()"
+            aria-label="Close project"
+        >
+            ×
+        </button>
+
+        <div id="modal-body"></div>
+
+    </div>
+
 </div>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
