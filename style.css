@@ -673,6 +673,13 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 22px 0 28px;
+}
+
 
 /* =========================================
    SKILLS

@@ -20,7 +20,9 @@ const projects = {
         ],
 
         technologies:
-            "SolidWorks · Arduino · MATLAB · 3D Printing"
+            "SolidWorks · Arduino · MATLAB · 3D Printing",
+
+        images: 5
     },
 
 
@@ -40,7 +42,9 @@ const projects = {
         ],
 
         technologies:
-            "Altium · PCB Design · Circuit Design · MCU Selection · Testing"
+            "Altium · PCB Design · Circuit Design · MCU Selection · Testing",
+
+        images: 5
     },
 
 
@@ -61,7 +65,9 @@ const projects = {
         ],
 
         technologies:
-            "KiCad · Arduino · PCB Design · Mechanical Design · Sensors"
+            "KiCad · Arduino · PCB Design · Mechanical Design · Sensors",
+
+        images: 5
     },
 
 
@@ -81,7 +87,9 @@ const projects = {
         ],
 
         technologies:
-            "Pneumatics · Mechanisms · CAD · Prototyping"
+            "Pneumatics · Mechanisms · CAD · Prototyping",
+
+        images: 5
     },
 
 
@@ -102,7 +110,9 @@ const projects = {
         ],
 
         technologies:
-            "Pneumatics · Testing · Validation · CAD · Prototyping"
+            "Pneumatics · Testing · Validation · CAD · Prototyping",
+
+        images: 5
     },
 
 
@@ -126,7 +136,9 @@ const projects = {
         ],
 
         technologies:
-            "Pneumatics · CAD · Manufacturing · Safety · 3D Printing"
+            "Pneumatics · CAD · Manufacturing · Safety · 3D Printing",
+
+        images: 5
     },
 
 
@@ -145,7 +157,9 @@ const projects = {
         ],
 
         technologies:
-            "3D Printing · Fixtures · Soldering · CAD"
+            "3D Printing · Fixtures · Soldering · CAD",
+
+        images: 5
     }
 
 };
@@ -195,6 +209,44 @@ filters.forEach(filter => {
    PROJECT MODAL
 ========================================= */
 
+const imageFolders = {
+  "Robotic Arm": "robotic-arm",
+  "Automated Cable Verification PCB": "cable-pcb",
+  "IEEE EMC-SPI Student Hardware Competition": "emc-spi",
+  "Automated Agitation Jig": "agitation-jig",
+  "Catheter Vacuum Verification Jig": "vacuum-jig",
+  "Liquid Management Jig": "liquid-jig",
+  "Electrical Catheter Test Jig": "electrical-catheter-jig",
+  "Automated Loom": "automated-loom",
+  "Machining": "machining"
+};
+
+function placeholder(project, index) {
+  return `
+    <div class="placeholder"
+         data-image="images/${imageFolders[project.title]}/${String(index).padStart(2, "0")}.jpg">
+      <span class="placeholder-label">
+        IMAGE ${String(index).padStart(2, "0")} · Replace with portfolio photo
+      </span>
+    </div>
+  `;
+}
+
+function projectCard(project, index) {
+  return `
+    <article class="project-card" ...>
+      <div class="project-cover">
+        ${placeholder(project, 1)}
+      </div>
+
+      <div class="project-info">
+        ...
+        <span class="tag">${project.images} images</span>
+      </div>
+    </article>
+  `;
+}
+
 function openProject(id) {
 
     const project = projects[id];
@@ -203,6 +255,11 @@ function openProject(id) {
 
     const modal = document.getElementById("project-modal");
     const body = document.getElementById("modal-body");
+
+    const gallery = Array.from(
+        { length: p.images },
+        (_, i) => placeholder(p, i + 1)
+    ).join("");
 
     body.innerHTML = `
 
