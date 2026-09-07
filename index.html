@@ -196,7 +196,7 @@
                  data-category="robotics mechanical">
 
             <div class="project-image">
-                <img src="images/robotic-arm.jpg"
+                <img src="images/robotic-arm/01.jpeg"
                      alt="5DOF robotic arm">
 
                 <span class="project-number">01</span>
@@ -228,7 +228,8 @@
 
                 <button
                     class="project-link"
-                    onclick="openProject('robotic-arm')"
+                    type="button"
+                    data-project="robotic-arm"
                 >
                     View project →
                 </button>
@@ -244,7 +245,7 @@
                  data-category="electrical">
 
             <div class="project-image">
-                <img src="images/cable-pcb.jpg"
+                <img src="images/cable-pcb/01.png"
                      alt="Automated cable verification PCB">
 
                 <span class="project-number">02</span>
@@ -272,7 +273,8 @@
 
                 <button
                     class="project-link"
-                    onclick="openProject('cable-pcb')"
+                    type="button"
+                    data-project="cable-pcb"
                 >
                     View project →
                 </button>
@@ -288,7 +290,7 @@
                  data-category="robotics electrical mechanical">
 
             <div class="project-image">
-                <img src="images/emc-car.jpg"
+                <img src="images/emc-spi/01.jpg"
                      alt="IEEE EMC-SPI competition car">
 
                 <span class="project-number">03</span>
@@ -320,7 +322,8 @@
 
                 <button
                     class="project-link"
-                    onclick="openProject('emc')"
+                    type="button"
+                    data-project="emc"
                 >
                     View project →
                 </button>
@@ -364,7 +367,8 @@
 
                 <button
                     class="project-link"
-                    onclick="openProject('agitation')"
+                    type="button"
+                    data-project="agitation"
                 >
                     View project →
                 </button>
@@ -408,7 +412,8 @@
 
                 <button
                     class="project-link"
-                    onclick="openProject('vacuum')"
+                    type="button"
+                    data-project="vacuum"
                 >
                     View project →
                 </button>
@@ -452,7 +457,8 @@
 
                 <button
                     class="project-link"
-                    onclick="openProject('liquid')"
+                    type="button"
+                    data-project="liquid"
                 >
                     View project →
                 </button>
@@ -496,7 +502,8 @@
 
                 <button
                     class="project-link"
-                    onclick="openProject('catheter')"
+                    type="button"
+                    data-project="catheter"
                 >
                     View project →
                 </button>
@@ -791,15 +798,15 @@
      PROJECT MODAL
 ========================= -->
 
-<div id="project-modal" class="modal">
+<div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
 
-    <div class="modal-overlay" onclick="closeProject()"></div>
+    <div class="modal-overlay"></div>
 
     <div class="modal-content">
 
         <button
             class="modal-close"
-            onclick="closeProject()"
+            type="button"
             aria-label="Close project"
         >
             ×
@@ -812,7 +819,7 @@
 </div>
 
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

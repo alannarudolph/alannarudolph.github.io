@@ -19,6 +19,12 @@ const projects = {
             "Powered by a 5V portable battery."
         ],
 
+        gallery: [
+            "images/robotic-arm/01.jpeg",
+            "images/robotic-arm/02.jpeg",
+            "images/robotic-arm/03.jpeg"
+        ],
+
         technologies:
             "SolidWorks · Arduino · MATLAB · 3D Printing"
     },
@@ -37,6 +43,11 @@ const projects = {
             "Documented circuit design choices for design review.",
             "Independently completed schematic and layout in Altium.",
             "Resulted in a platform capable of continuity testing 15 unique cable types."
+        ],
+
+        gallery: [
+            "images/cable-pcb/01.png",
+            "images/cable-pcb/02.jpeg"
         ],
 
         technologies:
@@ -59,6 +70,8 @@ const projects = {
             "Created PCB schematic in KiCad.",
             "Integrated power, Arduino, onboard sensors, and user buttons."
         ],
+
+        gallery: ["images/emc-spi/01.jpg"],
 
         technologies:
             "KiCad · Arduino · PCB Design · Mechanical Design · Sensors"
@@ -195,7 +208,9 @@ filters.forEach(filter => {
    PROJECT MODAL
 ========================================= */
 
-function openProject(id) {
+let lastFocusedElement;
+
+function openProject(id, trigger) {
 
     const project = projects[id];
 
@@ -204,13 +219,25 @@ function openProject(id) {
     const modal = document.getElementById("project-modal");
     const body = document.getElementById("modal-body");
 
+    const gallery = project.gallery?.length
+        ? `<section class="project-gallery" aria-label="${project.title} image gallery">
+                <h3>Project gallery</h3>
+                <div class="gallery-grid">
+                    ${project.gallery.map((image, index) => `
+                        <a href="${image}" target="_blank" rel="noopener" class="gallery-image">
+                            <img src="${image}" alt="${project.title} — image ${index + 1}" loading="lazy">
+                        </a>`).join("")}
+                </div>
+            </section>`
+        : "";
+
     body.innerHTML = `
 
         <p class="eyebrow">
             PROJECT
         </p>
 
-        <h2>
+        <h2 id="modal-title">
             ${project.title}
         </h2>
 
@@ -234,21 +261,28 @@ function openProject(id) {
                 .map(tag => `<span>${tag}</span>`)
                 .join("")}
         </div>
+
+        ${gallery}
     `;
 
     modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
 
     document.body.style.overflow = "hidden";
+    lastFocusedElement = trigger || document.activeElement;
+    modal.querySelector(".modal-close").focus();
 }
 
 
 function closeProject() {
 
-    document
-        .getElementById("project-modal")
-        .classList.remove("open");
+    const modal = document.getElementById("project-modal");
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
 
     document.body.style.overflow = "";
+
+    lastFocusedElement?.focus();
 
 }
 
@@ -264,3 +298,10 @@ document.addEventListener("keydown", event => {
     }
 
 });
+
+document.querySelectorAll("[data-project]").forEach(button => {
+    button.addEventListener("click", () => openProject(button.dataset.project, button));
+});
+
+document.querySelector(".modal-close").addEventListener("click", closeProject);
+document.querySelector(".modal-overlay").addEventListener("click", closeProject);
