@@ -673,6 +673,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* The Loom card has both a video link and a project-gallery button. */
+.loom-project-link {
+    display: block;
+}
+
 
 /* =========================================
    SKILLS
