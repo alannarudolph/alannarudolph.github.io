@@ -20,7 +20,7 @@ const projects = {
         ],
 
         technologies:
-            "SolidWorks · Arduino · MATLAB · 3D Printing"
+            "Robotics · SolidWorks · Arduino · MATLAB3D"
     },
 
 
@@ -33,14 +33,14 @@ const projects = {
 
         details: [
             "Implemented the first stage of the proposed testing platform.",
-            "Designed a custom PCB for cable verification.",
+            "Designed a custom PCB for verification of custom cables.",
             "Documented circuit design choices for design review.",
             "Independently completed schematic and layout in Altium.",
             "Resulted in a platform capable of continuity testing 15 unique cable types."
         ],
 
         technologies:
-            "Altium · PCB Design · Circuit Design · MCU Selection · Testing"
+            "Altium · PCB Design · Circuit Design · Testing"
     },
 
 
@@ -56,8 +56,7 @@ const projects = {
             "Designed a lightweight chassis.",
             "Integrated constraints including an onboard battery and robotic-arm interaction features.",
             "Designed a robot end-effector gripper.",
-            "Created PCB schematic in KiCad.",
-            "Integrated power, Arduino, onboard sensors, and user buttons."
+            "Created PCB schematic in KiCad."
         ],
 
         technologies:
@@ -81,7 +80,7 @@ const projects = {
         ],
 
         technologies:
-            "Pneumatics · Mechanisms · CAD · Prototyping"
+            "Mechanisms · Pneumatics · SolidWorks · Prototyping"
     },
 
 
@@ -93,16 +92,17 @@ const projects = {
             "Redesigned, built, and verified a jig for testing a medical device under vacuum.",
 
         details: [
-            "Required pressure range of -3 to -5 kPa.",
+            "Required pressure range of -3.0 to -5.0 kPa.",
             "Achieved pressure accuracy of ±0.05 kPa.",
-            "Consulted test operators throughout design and assembly.",
+            "Consulted test operators for usability throughout design and assembly.",
+            "Reduced time for test set-up and execution by 40%",
             "Constructed acrylic test chamber using solvent welding.",
             "Implemented a pneumatic pressure regulator and Venturi pump.",
             "Completed test method validation for design verification testing."
         ],
 
         technologies:
-            "Pneumatics · Testing · Validation · CAD · Prototyping"
+            "Mechanical Design · Pneumatics · Testing · Validation · SolidWorks"
     },
 
 
@@ -126,7 +126,7 @@ const projects = {
         ],
 
         technologies:
-            "Pneumatics · CAD · Manufacturing · Safety · 3D Printing"
+            "Mechanical Design · Pneumatics · Machining · SolidWorks"
     },
 
 
@@ -145,7 +145,7 @@ const projects = {
         ],
 
         technologies:
-            "3D Printing · Fixtures · Soldering · CAD"
+            "Fixtures · Soldering · SolidWorks · 3D Printing"
     },
 
     "loom": {
@@ -156,7 +156,7 @@ const projects = {
             "Designed and built a working automated weaving system.",
             "Integrated mechanical mechanisms, electronics, and programming."
         ],
-        technologies: "Arduino · 3D Printing · Mechanisms · Programming"
+        technologies: "Automation · System Integration · Mechanisms · C"
     },
 
     "machining": {
