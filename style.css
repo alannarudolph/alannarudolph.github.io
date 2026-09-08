@@ -360,10 +360,17 @@ nav a:hover {
     background: var(--green);
     color: white;
 
+    min-height: 12px;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
     max-width: 100%;
+}
+
+/* Retain the green section as an accent bar without the stat content. */
+.stats .stat {
+    display: none;
 }
 
 .stat {
