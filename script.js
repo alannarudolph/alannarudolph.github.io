@@ -19,12 +19,6 @@ const projects = {
             "Powered by a 5V portable battery."
         ],
 
-        gallery: [
-            "images/robotic-arm/01.jpeg",
-            "images/robotic-arm/02.jpeg",
-            "images/robotic-arm/03.jpeg"
-        ],
-
         technologies:
             "SolidWorks · Arduino · MATLAB · 3D Printing"
     },
@@ -43,11 +37,6 @@ const projects = {
             "Documented circuit design choices for design review.",
             "Independently completed schematic and layout in Altium.",
             "Resulted in a platform capable of continuity testing 15 unique cable types."
-        ],
-
-        gallery: [
-            "images/cable-pcb/01.png",
-            "images/cable-pcb/02.jpeg"
         ],
 
         technologies:
@@ -70,8 +59,6 @@ const projects = {
             "Created PCB schematic in KiCad.",
             "Integrated power, Arduino, onboard sensors, and user buttons."
         ],
-
-        gallery: ["images/emc-spi/01.jpg"],
 
         technologies:
             "KiCad · Arduino · PCB Design · Mechanical Design · Sensors"
@@ -159,8 +146,43 @@ const projects = {
 
         technologies:
             "3D Printing · Fixtures · Soldering · CAD"
+    },
+
+    "loom": {
+        title: "Automated Loom",
+        subtitle: "MTE100 Mechatronics Project",
+        description: "Built a robotic weaving system integrating three distinct motion mechanisms.",
+        details: [
+            "Designed and built a working automated weaving system.",
+            "Integrated mechanical mechanisms, electronics, and programming."
+        ],
+        technologies: "Arduino | 3D Printing | Mechanisms | Programming"
+    },
+
+    "machining": {
+        title: "Machining",
+        subtitle: "Kardium Manufacturing",
+        description: "Manufactured aluminum and Delrin components using a manual mill and workshop equipment.",
+        details: [
+            "Produced components for engineering prototypes.",
+            "Used manual milling and workshop equipment."
+        ],
+        technologies: "Manual Milling | Aluminum | Delrin | Manufacturing"
     }
 
+};
+
+// Project IDs do not always match their image-folder names.
+const projectGalleryFolders = {
+    "robotic-arm": "robotic-arm",
+    "cable-pcb": "cable-pcb",
+    emc: "emc-spi",
+    agitation: "agitation-jig",
+    vacuum: "vacuum-jig",
+    liquid: "liquid-jig",
+    catheter: "electrical-catheter-jig",
+    loom: "automated-loom",
+    machining: "machining"
 };
 
 
@@ -219,11 +241,13 @@ function openProject(id, trigger) {
     const modal = document.getElementById("project-modal");
     const body = document.getElementById("modal-body");
 
-    const gallery = project.gallery?.length
+    const galleryImages = window.projectGalleries?.[projectGalleryFolders[id]] || [];
+
+    const gallery = galleryImages.length
         ? `<section class="project-gallery" aria-label="${project.title} image gallery">
                 <h3>Project gallery</h3>
                 <div class="gallery-grid">
-                    ${project.gallery.map((image, index) => `
+                    ${galleryImages.map((image, index) => `
                         <a href="${image}" target="_blank" rel="noopener" class="gallery-image">
                             <img src="${image}" alt="${project.title} — image ${index + 1}" loading="lazy">
                         </a>`).join("")}
