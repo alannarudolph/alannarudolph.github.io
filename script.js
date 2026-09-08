@@ -20,7 +20,7 @@ const projects = {
         ],
 
         technologies:
-            "Robotics · SolidWorks · Arduino · MATLAB3D"
+            "Robotics · SolidWorks · Arduino · MATLAB"
     },
 
 
@@ -184,6 +184,29 @@ const projectGalleryFolders = {
     loom: "automated-loom",
     machining: "machining"
 };
+
+function technologyList(technologies) {
+    return technologies
+        .split(/\s*(?:Â·|·|\|)\s*/)
+        .filter(Boolean);
+}
+
+function populateProjectTags() {
+    document.querySelectorAll("[data-project]").forEach(trigger => {
+        const project = projects[trigger.dataset.project];
+        const tags = trigger.closest(".project-card")?.querySelector(".tags");
+
+        if (!project || !tags) return;
+
+        tags.replaceChildren(...technologyList(project.technologies).map(technology => {
+            const tag = document.createElement("span");
+            tag.textContent = technology;
+            return tag;
+        }));
+    });
+}
+
+populateProjectTags();
 
 
 /* =========================================
