@@ -156,7 +156,7 @@ const projects = {
             "Designed and built a working automated weaving system.",
             "Integrated mechanical mechanisms, electronics, and programming."
         ],
-        technologies: "Arduino | 3D Printing | Mechanisms | Programming"
+        technologies: "Arduino · 3D Printing · Mechanisms · Programming"
     },
 
     "machining": {
@@ -167,7 +167,7 @@ const projects = {
             "Produced components for engineering prototypes.",
             "Used manual milling and workshop equipment."
         ],
-        technologies: "Manual Milling | Aluminum | Delrin | Manufacturing"
+        technologies: "Machining · Manufacturing"
     }
 
 };
